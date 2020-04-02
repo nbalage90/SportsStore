@@ -24,9 +24,10 @@ namespace SportsStore
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
-            app.UseMvc(routes =>
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
             {
-
+                endpoints.MapControllerRoute("default", "{controller=Product}/{action=List}/{id?}");
             });
         }
     }
