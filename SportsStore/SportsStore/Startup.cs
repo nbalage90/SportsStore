@@ -25,7 +25,7 @@ namespace SportsStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration["Data:SportsStroreProducts:ConnectionString"])); // Microsoft.EntityFrameworkCore.SqlServer NuGet
+                options.UseSqlServer(Configuration["Data:SportsStoreProducts:ConnectionString"])); // Microsoft.EntityFrameworkCore.SqlServer NuGet
             services.AddTransient<IProductRepository, EFProductRepository>();
             services.AddMvc();
         }
@@ -40,6 +40,7 @@ namespace SportsStore
             {
                 endpoints.MapControllerRoute("default", "{controller=Product}/{action=List}/{id?}");
             });
+            SeedData.EnsurePopulated(app);
         }
     }
 }
