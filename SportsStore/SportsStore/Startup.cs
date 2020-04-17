@@ -38,6 +38,7 @@ namespace SportsStore
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("pagination", "Products/Page{productPage}", new { Controller = "Product", action = "List" });
                 endpoints.MapControllerRoute("default", "{controller=Product}/{action=List}/{id?}");
             });
             SeedData.EnsurePopulated(app);
