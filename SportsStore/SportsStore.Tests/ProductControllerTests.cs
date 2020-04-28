@@ -18,11 +18,11 @@ namespace SportsStore.Tests
             Mock<IProductRepository> mock = new Mock<IProductRepository>();
             mock.Setup(m => m.Products).Returns((new Product[]
             {
-                new Product { ProductId = 1, Name = "P1" },
-                new Product { ProductId = 2, Name = "P2" },
-                new Product { ProductId = 3, Name = "P3" },
-                new Product { ProductId = 4, Name = "P4" },
-                new Product { ProductId = 5, Name = "P5" }
+                new Product { ProductID = 1, Name = "P1" },
+                new Product { ProductID = 2, Name = "P2" },
+                new Product { ProductID = 3, Name = "P3" },
+                new Product { ProductID = 4, Name = "P4" },
+                new Product { ProductID = 5, Name = "P5" }
             }).AsQueryable<Product>());
 
             ProductController controller = new ProductController(mock.Object);
