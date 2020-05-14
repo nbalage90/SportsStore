@@ -6,15 +6,23 @@
     <link rel="stylesheet" asp-href-include="/lib/bootstrap/**/*.min.css" />
     <title>@ViewBag.Title</title>
     <style>
-        .input-validation-error { border-color: red; background-color: #fee; }
+        .input-validation-error {
+            border-color: red;
+            background-color: #fee;
+        }
     </style>
     <script src="~/lib/jquery/jquery.min.js"></script>
     <script src="~/lib/jQuery-Validation-Engine/jquery.validationEngine.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 </head>
 <body class="m-1 p-1">
-    <div class="bg-info p-2">
-        <h4>@ViewBag.Title</h4>
+    <div class="bg-info p-2 row">
+        <div class="col">
+            <h4>@ViewBag.Title</h4>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-sm btn-primary" asp-action="Logout" asp-controller="Account">Log Out</a>
+        </div>
     </div>
     @if (TempData["message"] != null)
     {
